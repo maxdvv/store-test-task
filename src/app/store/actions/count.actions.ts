@@ -19,7 +19,6 @@ export class CountDecreaseAction implements Action {
 }
 
 
-
 export type CountActions = CountChangeAction
   | CountIncreaseAction
   | CountDecreaseAction

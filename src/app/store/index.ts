@@ -14,6 +14,7 @@ export interface State {
 }
 
 export const reducers: ActionReducerMap<State> = {
+  // @ts-ignore
   [countNode]: countReducer
 };
 
