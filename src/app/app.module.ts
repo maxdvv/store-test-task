@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from "@angular/material/button";
+import {CountEffects} from "./store/effects/count.effects";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import {MatButtonModule} from "@angular/material/button";
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     BrowserAnimationsModule,
-    //EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([CountEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

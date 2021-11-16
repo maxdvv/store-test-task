@@ -3,6 +3,7 @@ import {CountState} from "../../store/reducers/count.reducer";
 import {select, Store} from "@ngrx/store";
 import {Observable} from "rxjs";
 import {selectCounter1, selectCounter2} from "../../store/selectors/count.selectors";
+import {CountChangeAction} from "../../store/actions/count.actions";
 
 @Component({
   selector: 'app-component1',
@@ -35,6 +36,7 @@ export class Component1Component implements OnInit {
 
   start() {
     console.log("Start")
+    this.store$.dispatch(new CountChangeAction())
   }
 
 }
