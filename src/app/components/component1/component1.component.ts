@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {CountState} from "../../store/reducers/count.reducer";
+import {select, Store} from "@ngrx/store";
+import {Observable} from "rxjs";
+import {selectCounter1, selectCounter2} from "../../store/selectors/count.selectors";
 
 @Component({
   selector: 'app-component1',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Component1Component implements OnInit {
 
-  constructor() { }
+  // public counter1$: Observable<number> = this.store$.pipe(select(selectCounter1))
+  // public counter2$: Observable<number> = this.store$.pipe(select(selectCounter2))
+
+  public counter1!: number
+  public counter2!: number
+
+  constructor(private store$: Store<CountState>) { }
 
   ngOnInit(): void {
+    this.store$.pipe(select(selectCounter1)).subscribe(
+      (counter1) => {
+        this.counter1 = counter1
+      }
+    )
+
+    this.store$.pipe(select(selectCounter2)).subscribe(
+      (counter2) => {
+        this.counter2 = counter2
+      }
+    )
+  }
+
+  start() {
+    console.log("Start")
   }
 
 }

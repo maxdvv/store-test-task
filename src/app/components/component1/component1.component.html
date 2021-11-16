@@ -1,7 +1,11 @@
-<mat-card class="card">
-  <mat-card-title>Component 1</mat-card-title>
-  <mat-card-actions class="center">
-    <button mat-raised-button color="primary">Start</button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <mat-card class="card">
+    <mat-card-title>Component 1</mat-card-title>
+    <mat-card-actions class="center">
+      <button mat-raised-button color="primary" (click)="start()">Start</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <app-component2 [counter1]="counter1" [counter2] = counter2></app-component2>
+</div>
 

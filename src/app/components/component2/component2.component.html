@@ -3,9 +3,19 @@
   <mat-card-actions >
     <div class="box-container">
     <div class="counter-name">Counter 1</div>
-    <div class="box">{{5}}</div>
+    <div class="box"
+         [ngClass]="{'box-red': counter1 < 0,
+                   'box-blue': counter1 > 0}"
+    >
+      {{ counter1 }}
+    </div>
     <div class="counter-name">Counter 2</div>
-    <div class="box ">{{-10}}</div>
+    <div class="box"
+         [ngClass]="{'box-red': counter2 < 0,
+                   'box-blue': counter2 > 0}"
+    >
+      {{ counter2 }}
+    </div>
     </div>
   </mat-card-actions>
 </mat-card>

@@ -10,5 +10,5 @@ export const selectCounter1 = createSelector(
 
 export const selectCounter2 = createSelector(
   selectCountFeature,
-  (state: CountState): number => state.counter1
+  (state: CountState): number => state.counter2
 )
