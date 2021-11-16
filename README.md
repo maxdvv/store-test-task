@@ -21,3 +21,5 @@ https://ngrx.io/docs
 #####Generate the initial state management files within a store folder and register it within the app.module.ts.
 * ng generate @ngrx/schematics:store State --root --state-path /store --module app.module.ts
 
+#####Install Angular Material
+* ng add @angular/material

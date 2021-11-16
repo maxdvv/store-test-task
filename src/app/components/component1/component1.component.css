@@ -1,0 +1,10 @@
+.card {
+  max-width: 300px;
+  height: 230px;
+  margin-right: 50px;
+}
+.card .center {
+  text-align: center;
+}
+
+/*# sourceMappingURL=component1.component.css.map */
