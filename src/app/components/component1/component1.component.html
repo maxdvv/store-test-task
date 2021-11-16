@@ -2,7 +2,9 @@
   <mat-card class="card">
     <mat-card-title>Component 1</mat-card-title>
     <mat-card-actions class="center">
-      <button mat-raised-button color="primary" (click)="start()">Start</button>
+      <button mat-raised-button color="primary" [disabled]="isStarted" (click)="start()">Start</button>
+      <button mat-raised-button color="accent" (click)="stop()">Stop</button>
+      <button mat-raised-button color="warn" (click)="reset()">Reset</button>
     </mat-card-actions>
   </mat-card>
 
