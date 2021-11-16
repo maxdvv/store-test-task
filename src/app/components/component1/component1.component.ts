@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CountState} from "../../store/reducers/count.reducer";
 import {select, Store} from "@ngrx/store";
-import {Observable} from "rxjs";
+import {Observable, takeWhile, tap, timer} from "rxjs";
 import {selectCounter1, selectCounter2} from "../../store/selectors/count.selectors";
 import {CountChangeAction, CountResetAction} from "../../store/actions/count.actions";
 
@@ -39,18 +39,26 @@ export class Component1Component implements OnInit {
   start() {
     this.isStarted = true
     console.log("Start")
-    this.timerId = setInterval(() => this.store$.dispatch(new CountChangeAction()), 1000);
+    //this.timerId = setInterval(() => this.store$.dispatch(new CountChangeAction()), 1000);
+
+    //Observable timer
+    timer(0,1000).pipe(
+      takeWhile(() => this.isStarted),
+      tap( () => this.store$.dispatch(new CountChangeAction()))
+    ).subscribe()
+
+
   }
 
   stop() {
     this.isStarted = false
     console.log("Stop")
-    clearInterval(this.timerId)
+    //clearInterval(this.timerId)
   }
   reset() {
     this.isStarted = false
     console.log("Reset")
-    clearInterval(this.timerId)
+   // clearInterval(this.timerId)
     this.store$.dispatch(new CountResetAction())
 
   }
