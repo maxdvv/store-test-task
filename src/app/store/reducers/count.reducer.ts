@@ -7,7 +7,7 @@ export interface CountState {
   counter2: number
 }
 
-const initialState: CountState = {
+export const initialState: CountState = {
   counter1: -5,
   counter2: 10
 }
@@ -27,11 +27,7 @@ export const countReducer = (state: CountState = initialState, action: CountActi
         counter2: state.counter2 - 1
       }
     case countActionsType.reset:
-      return {
-        ...state,
-        counter1: -5,
-        counter2: 10
-      }
+      return state
     default:
       return state
   }
