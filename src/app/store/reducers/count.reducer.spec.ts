@@ -2,8 +2,8 @@ import * as fromReducer from './count.reducer';
 import * as fromAction from '../actions/count.actions';
 import {CountActions} from "../actions/count.actions";
 
-
-  describe('CountReducer', () => {
+describe('CountReducer', () => {
+  describe('InitialState', () => {
     it('should return the default state', () => {
       const { initialState } = fromReducer;
       const action = {};
@@ -13,7 +13,7 @@ import {CountActions} from "../actions/count.actions";
     });
   });
 
-  describe('unknown action', () => {
+  describe('Unknown action', () => {
     it('should return the default state', () => {
       const { initialState } = fromReducer;
       const action = {
@@ -80,3 +80,4 @@ import {CountActions} from "../actions/count.actions";
 
     });
   });
+});
