@@ -27,7 +27,11 @@ export const countReducer = (state: CountState = initialState, action: CountActi
         counter2: state.counter2 - 1
       }
     case countActionsType.reset:
-      return state
+      return {
+        ...state,
+        counter1: -5,
+        counter2: 10
+      }
     default:
       return state
   }

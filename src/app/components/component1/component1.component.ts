@@ -14,10 +14,10 @@ export class Component1Component implements OnInit {
 
   // public counter1$: Observable<number> = this.store$.pipe(select(selectCounter1))
   // public counter2$: Observable<number> = this.store$.pipe(select(selectCounter2))
+  // public timerId: number | undefined
 
-  public counter1!: number
-  public counter2!: number
-  public timerId!: number
+  public counter1: number | undefined
+  public counter2: number | undefined
   public isStarted: boolean = false
 
   constructor(private store$: Store<CountState>) { }
@@ -59,7 +59,7 @@ export class Component1Component implements OnInit {
   reset() {
     this.isStarted = false
     //console.log("Reset")
-   // clearInterval(this.timerId)
+    //clearInterval(this.timerId)
     this.store$.dispatch(new CountResetAction())
 
   }

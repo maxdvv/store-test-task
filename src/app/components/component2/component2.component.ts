@@ -8,8 +8,8 @@ import {Observable} from "rxjs";
 })
 export class Component2Component implements OnInit {
 
-  @Input() counter1!: number;
-  @Input() counter2!: number
+  @Input() counter1: number | undefined
+  @Input() counter2: number | undefined
 
   constructor() { }
 

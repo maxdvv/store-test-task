@@ -4,15 +4,15 @@
     <div class="box-container">
       <div class="counter-name">Counter 1</div>
       <div class="box"
-           [ngClass]="{'box-red': counter1 < 0,
-                     'box-blue': counter1 > 0}"
+           [ngClass]="{'box-red': (counter1 !== undefined ? counter1 < 0 : false),
+                     'box-blue': (counter1 !== undefined ? counter1 > 0 : false)}"
       >
         {{ counter1 }}
       </div>
       <div class="counter-name">Counter 2</div>
       <div class="box"
-           [ngClass]="{'box-red': counter2 < 0,
-                     'box-blue': counter2 > 0}"
+           [ngClass]="{'box-red': (counter2 !== undefined ? counter2 < 0 : false),
+                     'box-blue': (counter2 !== undefined ? counter2 > 0 : false)}"
       >
         {{ counter2 }}
       </div>
