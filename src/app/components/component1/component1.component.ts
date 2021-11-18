@@ -55,6 +55,7 @@ export class Component1Component implements OnInit {
     console.log("Stop")
     //clearInterval(this.timerId)
   }
+
   reset() {
     this.isStarted = false
     console.log("Reset")
