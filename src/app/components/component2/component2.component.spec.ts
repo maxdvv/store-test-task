@@ -15,6 +15,7 @@ describe('Component2Component', () => {
 
   it('should create the component2', () => {
     const fixture = TestBed.createComponent(Component2Component);
+    fixture.detectChanges();
     const component2 = fixture.componentInstance;
     expect(component2).toBeTruthy();
   });

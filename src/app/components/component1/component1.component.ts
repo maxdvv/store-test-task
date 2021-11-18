@@ -38,7 +38,7 @@ export class Component1Component implements OnInit {
 
   start() {
     this.isStarted = true
-    console.log("Start")
+    //console.log("Start")
     //this.timerId = setInterval(() => this.store$.dispatch(new CountChangeAction()), 1000);
 
     //Observable timer
@@ -52,13 +52,13 @@ export class Component1Component implements OnInit {
 
   stop() {
     this.isStarted = false
-    console.log("Stop")
+    //console.log("Stop")
     //clearInterval(this.timerId)
   }
 
   reset() {
     this.isStarted = false
-    console.log("Reset")
+    //console.log("Reset")
    // clearInterval(this.timerId)
     this.store$.dispatch(new CountResetAction())
 
