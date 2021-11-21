@@ -1,2 +1,14 @@
-<app-component1></app-component1>
+<div class="container">
+  <div class="center">
+    <app-component1 [counter1]="counter1"></app-component1>
+    <app-component2 [counter2]="counter2"></app-component2>
+  </div>
+
+  <div class="center">
+    <button mat-raised-button color="primary" [disabled]="isStarted" (click)="start()">Start</button>
+    <button mat-raised-button color="accent" (click)="stop()">Stop</button>
+    <button mat-raised-button color="warn" (click)="reset()">Reset</button>
+  </div>
+
+</div>
 

@@ -11,7 +11,6 @@ export class CountEffects {
   }
 
   @Effect( {dispatch: false} )
-
   changeCounters$ = this.actions$.pipe(
     ofType(countActionsType.change),
       tap(() => {
@@ -19,5 +18,4 @@ export class CountEffects {
         this.store$.dispatch(new CountDecreaseAction());
         this.store$.dispatch(new CountDecreaseAction());
       }));
-
 }

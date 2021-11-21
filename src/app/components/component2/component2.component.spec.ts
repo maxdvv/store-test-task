@@ -8,7 +8,6 @@ describe('Component2Component', () => {
       declarations: [
         Component2Component
       ],
-      // Не включать в проверку дочерние компоненты(не html элементы).
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   });

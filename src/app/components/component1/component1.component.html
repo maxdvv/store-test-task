@@ -1,13 +1,17 @@
 <div class="container">
   <mat-card class="card">
     <mat-card-title>Component 1</mat-card-title>
-    <mat-card-actions class="center">
-      <button mat-raised-button color="primary" [disabled]="isStarted" (click)="start()">Start</button>
-      <button mat-raised-button color="accent" (click)="stop()">Stop</button>
-      <button mat-raised-button color="warn" (click)="reset()">Reset</button>
+    <mat-card-actions >
+      <div class="box-container">
+        <div class="counter-name">Counter 1</div>
+        <div class="box"
+             [ngClass]="{'box-red': (counter1 !== undefined ? counter1 < 0 : false),
+                       'box-blue': (counter1 !== undefined ? counter1 > 0 : false)}"
+        >
+          {{ counter1 }}
+        </div>
+      </div>
     </mat-card-actions>
   </mat-card>
-
-  <app-component2 [counter1]="counter1" [counter2] = counter2></app-component2>
 </div>
 
