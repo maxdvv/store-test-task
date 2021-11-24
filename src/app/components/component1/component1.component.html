@@ -5,10 +5,10 @@
       <div class="box-container">
         <div class="counter-name">Counter 1</div>
         <div class="box"
-             [ngClass]="{'box-red': (counter1 !== undefined ? counter1 < 0 : false),
-                       'box-blue': (counter1 !== undefined ? counter1 > 0 : false)}"
+             [ngClass]="{'box-red': ((counter1$ | async) < 0 ),
+                       'box-blue': ((counter1$ | async) > 0 )}"
         >
-          {{ counter1 }}
+          {{ counter1$ | async}}
         </div>
       </div>
     </mat-card-actions>

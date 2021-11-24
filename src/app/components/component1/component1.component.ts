@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-component1',
@@ -7,8 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class Component1Component implements OnInit {
 
-  @Input() counter1: number | undefined
-  @Input() counter2: number | undefined
+  @Input() counter1$!: Observable<number>
 
   constructor() { }
 
